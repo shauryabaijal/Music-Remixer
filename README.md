@@ -1,17 +1,10 @@
 # MusicRemixer
+● AI-based music remixer model that can mix up multiple songs to create a new one. Further implemented to an app.
 
-## Using the API
-* Endpoint+path : https://musicremixer.herokuapp.com/remix
-* Method: POST
-* Body: type/json, urls = array of string(url to a wav file)
-```json
-{
-    "urls":[
-        "https://file-examples-com.github.io/uploads/2017/11/file_example_WAV_1MG.wav"
-    ]
-}
-```
-* Return : Wav file(Remix music)
+● The Model is built on the concepts of Short Term Fourier Transform and Recurrent Neural Networks.
+
+● A REST API is built on the model using Flask and the app is built using React native framework.
+
 ## Proposed Architecture of Model and Workflow
 ### Segregate the beats from the track
 Using Dynamic programming, can separate the beats from each other. Beats are detected in three stages, following the method of [Ellis, Daniel PW. “Beat tracking by dynamic programming”](http://labrosa.ee.columbia.edu/projects/beattrack/). The stages are as following, 
@@ -100,10 +93,7 @@ for i in range(N_BEATS):
     music.append(curr_beat)
 ```
 
-## Final Results
-* The notebook can be found in the [GitHub gist](https://gist.github.com/sudip-mondal-2002/9744e9ff0415ff6fbc8664473828444a).
-* [Sample audio input taken](./Backend/tmp/temp.wav).
-* [Generated audio from input](./Backend/tmp/remix.wav).
+
 
 ## Possible Upgradation further
 Currently assembling the new track from the clustered data, is a random process, instead we can feed it into a LSTM neural network to generate the tone. It should give a better result than the current randomized process.
