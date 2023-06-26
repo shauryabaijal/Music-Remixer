@@ -28,8 +28,7 @@ def beatExtractor(track,sr):
   beats = np.array(beats)
   return beats
 ```
-#### Results
-![Beats](./Backend/tmp/beats.png)
+
 
 ### Extract the features from segregated beats
 Extract the features to differentiate between the peculiarity of different beats in the music. To get the features, I have used the short time Fourier series transform (STFT). We know that any sound wave is sum of different sinusoidal wave which are Fourier series themselves. I have extracted 50 features from the beats according to the chromogram of the discrete Fourier series over short time span.
@@ -47,8 +46,7 @@ def featureExtractor(beats, sr, n_features):
   features = np.array(features)
   return features
 ```
-#### Results
-![Features](./Backend/tmp/features.png)
+
 
 ### Create clusters based on the extracted features
 I have implemented K means clustering on the data. A cluster refers to a collection of data points aggregated together because of certain similarities. You’ll define a target number k, which refers to the number of centroids you need in the dataset. A centroid is the imaginary or real location representing the centre of the cluster. Every data point is allocated to each of the clusters through reducing the in-cluster sum of squares. In other words, the K-means algorithm identifies k number of centroids, and then allocates every data point to the nearest cluster, while keeping the centroids as small as possible. The ‘means’ in the K-means refers to averaging of the data; that is, finding the centroid.
@@ -68,13 +66,11 @@ def groupExtractor(features, beats, n_groups):
   return (y_kmeans, group_to_index)
 ```
 
-#### Results
-![Clusters](./Backend/tmp/clusters.png)
+
 
 ### Generate new music from the beats
 To generate the music, there is not a hard bound theory I have used till now, I just simply took a logical algorithm to build the music. At every beat, we will do a random check if the next beat will be the correct next beat as per the original music or it will be a random beat from the cluster of the current beat. So, the current track will be 1-2-3-4-2 as shown in the figure.
 
-![Model Arch](./Backend/tmp/model.png)
 
 ```py
 for i in range(N_BEATS):
