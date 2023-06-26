@@ -1,7 +1,4 @@
 # MusicRemixer
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5af7cc51-8d88-48e0-a652-97bddfdd1dc2/deploy-status)](https://musicremixer.netlify.app/)
-[![Heroku](https://heroku-badge.herokuapp.com/?app=musicremixer)](https://musicremixer.herokuapp.com/)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]("https://colab.research.google.com/gist/sudip-mondal-2002/9744e9ff0415ff6fbc8664473828444a/music_generator.ipynb")
 
 ## Using the API
 * Endpoint+path : https://musicremixer.herokuapp.com/remix
