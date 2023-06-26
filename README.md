@@ -87,12 +87,4 @@ for i in range(N_BEATS):
     music.append(curr_beat)
 ```
 
-## Final Results
-* The notebook can be found in the [GitHub gist](https://gist.github.com/sudip-mondal-2002/9744e9ff0415ff6fbc8664473828444a).
-* [Sample audio input taken](./Backend/tmp/temp.wav).
-* [Generated audio from input](./Backend/tmp/remix.wav).
 
-## Possible Upgradation further
-Currently assembling the new track from the clustered data, is a random process, instead we can feed it into a LSTM neural network to generate the tone. It should give a better result than the current randomized process.
-
-![futuremodel](./Backend/tmp/futuremodel.png)
